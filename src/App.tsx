@@ -2,6 +2,7 @@ import './styles/theme.css'
 import './styles/global.css'
 import { Conteiner } from './components/Conteine'
 import { Logo } from './components/Logo'
+import { Menu } from './components/Menu'
 
 function App() {
 
@@ -11,9 +12,7 @@ function App() {
         <Logo/>
       </Conteiner>
       <Conteiner>
-        <section>
-          Menu
-        </section>
+        <Menu/>
       </Conteiner>
       <Conteiner>
         <section>
