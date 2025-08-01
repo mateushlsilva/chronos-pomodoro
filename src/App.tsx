@@ -1,15 +1,14 @@
 import './styles/theme.css'
 import './styles/global.css'
 import { Conteiner } from './components/Conteine'
+import { Logo } from './components/Logo'
 
 function App() {
 
   return (
     <>
       <Conteiner>
-        <section>
-          Logo
-        </section>
+        <Logo/>
       </Conteiner>
       <Conteiner>
         <section>
