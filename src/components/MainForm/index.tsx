@@ -9,6 +9,7 @@ import { useTaskContext } from '../../hooks/TaskHook'
 import { getNextCycle } from '../../utils/getNextCycle'
 import { getNextCycleType } from '../../utils/getNextCycleType'
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions'
+import { Tips } from '../Tips'
 
 export function MainForm() {
     const [taskName, setTaskName] = useState<string>("")
@@ -16,6 +17,7 @@ export function MainForm() {
 
     const nextCycle = getNextCycle(state.currentCycle)
     const nextCycleType = getNextCycleType(nextCycle)
+    
 
     const handleCreateNewTask = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -35,7 +37,6 @@ export function MainForm() {
 
         dispatch({ type: TaskActionTypes.START_TASK, payload: newTask })
 
-        
     }
 
     const handleInterruptTask = () => {
@@ -47,7 +48,7 @@ export function MainForm() {
                 <DefaultInput id='input' label='task' type='text' placeholder='Digite aqui...' onChange={(e) => setTaskName(e.target.value)} value={taskName} disabled={!!state.activeTask} />
             </div>
             <div className={styles.formRow}>
-                <p>Próximo intervalo é de {state.config[nextCycleType]} min</p>
+                <Tips/>
             </div>
             {state.currentCycle > 0 && (
                 <div className={styles.formRow}>
@@ -57,10 +58,10 @@ export function MainForm() {
 
             <div className={styles.formRow}>
                 {!state.activeTask && (
-                    <DefaultButton aria-label='Iniciar nova tarefa' title='Iniciar nova tarefa' type='submit' icon={<PlayCircleIcon />} color='green' key={'submit_key'}/>
-                )} 
+                    <DefaultButton aria-label='Iniciar nova tarefa' title='Iniciar nova tarefa' type='submit' icon={<PlayCircleIcon />} color='green' key={'submit_key'} />
+                )}
                 {!!state.activeTask && (
-                    <DefaultButton aria-label='Parar tarefa' title='Parar tarefa' type='button' icon={<StopCircleIcon />} color='red' onClick={handleInterruptTask} key={'button_key'}/>
+                    <DefaultButton aria-label='Parar tarefa' title='Parar tarefa' type='button' icon={<StopCircleIcon />} color='red' onClick={handleInterruptTask} key={'button_key'} />
                 )}
             </div>
         </form>
