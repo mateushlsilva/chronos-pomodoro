@@ -18,7 +18,7 @@ export function MainForm() {
 
     const nextCycle = getNextCycle(state.currentCycle)
     const nextCycleType = getNextCycleType(nextCycle)
-    
+    const lastTaskName = state.tasks[state.tasks.length - 1]?.name || ""; 
 
     const handleCreateNewTask = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -47,7 +47,7 @@ export function MainForm() {
     return (
         <form onSubmit={handleCreateNewTask} action="" className={styles.form}>
             <div className={styles.formRow}>
-                <DefaultInput id='input' label='task' type='text' placeholder='Digite aqui...' onChange={(e) => setTaskName(e.target.value)} value={taskName} disabled={!!state.activeTask} />
+                <DefaultInput id='input' label='task' type='text' placeholder='Digite aqui...' onChange={(e) => setTaskName(e.target.value)} value={taskName} defaultValue={lastTaskName} disabled={!!state.activeTask} />
             </div>
             <div className={styles.formRow}>
                 <Tips/>
