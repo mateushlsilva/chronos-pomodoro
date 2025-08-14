@@ -3,10 +3,12 @@ import { Heading } from "../../components/Heading";
 import { MainTemplate } from "../../templates/MainTemplate";
 import { Conteiner } from '../../components/Conteine'
 import { RouterLink } from "../../components/RouterLink";
+import { TitlePages } from "../../components/TitlePages";
 
 export function AbountPomodoro() {
     return (
         <MainTemplate>
+            <TitlePages title={'Entenda a Técnica Pomodoro'}/>
             <Conteiner>
                 <GenericHtml>
                     <Heading>A Técnica Pomodoro 🍅</Heading>

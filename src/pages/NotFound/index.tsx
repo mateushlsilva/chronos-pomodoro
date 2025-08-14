@@ -3,10 +3,12 @@ import { Heading } from "../../components/Heading";
 import { MainTemplate } from "../../templates/MainTemplate";
 import { Conteiner } from '../../components/Conteine'
 import { RouterLink } from "../../components/RouterLink";
+import { TitlePages } from "../../components/TitlePages";
 
 export function NotFound() {
     return (
         <MainTemplate>
+            <TitlePages title={'Página não encontrada'}/>
             <Conteiner>
                 <GenericHtml>
                     <Heading>404 - Página não encontrada 🚀</Heading>

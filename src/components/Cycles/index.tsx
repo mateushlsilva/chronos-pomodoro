@@ -19,7 +19,7 @@ export function Cycles(){
                 {cycleStep.map((_, index) => {
                     return (
                         <span
-                            id={index.toString()} 
+                            id={`${getNextCycle(index)}_${[getNextCycleType(getNextCycle(index))]}`} 
                             className={`${styles.cycleDot} ${styles[getNextCycleType(getNextCycle(index))]}`} 
                             aria-label={`Indicador de cliclo de ${cycleDescriptionMap[getNextCycleType(getNextCycle(index))]}`}
                             title={`Indicador de cliclo de ${cycleDescriptionMap[getNextCycleType(getNextCycle(index))]}`}
